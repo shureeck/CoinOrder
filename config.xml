@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<category name="mode">
+		<mode>
+			<autocapcha>Yes</autocapcha>
+		</mode>
+	</category>
+	<category name="coins">
+		<coin>85 РоКів донеЦькій області</coin>
+		<coin>50 років Світовому конгресу українців (н)</coin>
+	</category>
+	<category name="users">
+		<user>
+			<login>fdagr</login>
+			<password>Ra_16da0109</password>
+			<region>Відділ грошового обігу в Рівненській обл.</region>
+		</user>
+		<user>
+			<login>sadan</login>
+			<password>Ra_16da0109</password>
+			<region>Відділ грошового обігу в Закарпатській обл.</region>
+		</user>
+	</category>
+</root>
