@@ -1,14 +1,24 @@
 import org.openqa.selenium.WebDriver;
 import org.w3c.dom.NodeList;
 
+import java.util.ArrayList;
+
 public class Order {
-    public static boolean order(String region, NodeList coins, WebDriver driver){
+    public static boolean order(ArrayList <String> region, NodeList coins, WebDriver driver){
         boolean state = false;
+        int i=0;
 
         //Select Region
-        boolean stateRegion = Region.selectRegion(region, driver);
-        //Select Coins
-        state=SelectCoin.selectCoin(stateRegion,coins,driver);
+        while(!state && i<region.size()) {
+            boolean stateRegion = Region.selectRegion(region.get(i), driver);
+
+            //Select Coins
+            if (stateRegion) {
+                state = SelectCoin.selectCoin(coins, driver);
+            }
+
+            i++;
+        }
 
         return state;
     }

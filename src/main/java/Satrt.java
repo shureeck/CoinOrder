@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -28,7 +29,7 @@ public class Satrt {
             //Set User Settings
             String login = User.getLogin(userList.item(i));
             String password = User.getPassword(userList.item(i));
-            String region = User.getRegion(userList.item(i));
+            ArrayList<String> region = User.getRegion(userList.item(i));
 
             System.out.println("Используются коннекты пользователя: " + login);
             Loger.setLog(">>>>>>>>>>Используются коннекты пользователя: " + login);

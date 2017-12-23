@@ -1,6 +1,8 @@
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
+import java.util.ArrayList;
+
 /**
  * Created by Poliakov.A on 12/6/2017.
  */
@@ -13,8 +15,14 @@ public class User {
         String password=(((Element)user).getElementsByTagName("password")).item(0).getTextContent();
         return  password;
     }
-    public static  String getRegion(Node user){
-        String region=(((Element)user).getElementsByTagName("region")).item(0).getTextContent();
+    public static ArrayList<String> getRegion(Node user){
+       ArrayList<String> region=new ArrayList<>();
+       int i=0;
+       int lenth= ((Element)user).getElementsByTagName("region").getLength();
+       while (i<lenth) {
+           region.add((((Element) user).getElementsByTagName("region")).item(i).getTextContent());
+           i++;
+       }
         return  region;
     }
 }

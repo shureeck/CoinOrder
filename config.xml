@@ -10,14 +10,22 @@
 		<coin>50 років Світовому конгресу українців (н)</coin>
 	</category>
 	<category name="users">
-		<user>
-			<login>fdagr</login>
-			<password>Ra_16da0109</password>
-			<region>Відділ грошового обігу в Рівненській обл.</region>
-		</user>
+		<!--<user>-->
+			<!--<login>fdagr</login>-->
+			<!--<password>Ra_16da0109</password>-->
+			<!--<region>Відділ грошового обігу в Рівненській обл.</region>-->
+		<!--</user>-->
 		<user>
 			<login>sadan</login>
 			<password>Ra_16da0109</password>
+			<region>Відділ грошового обігу в Миколаївській обл.</region>
+			<region>Відділ грошового обігу в Закарпатській обл.</region>
+			<region>Відділ грошового обігу в Дніпропетровській області</region>
+			<region>Відділ грошового обігу в Івано-Франківській обл.</region>
+			<region>Відділ грошового обігу в Харківській області</region>
+			<region>Відділ грошового обігу у Чернівецькій області</region>
+			<region>Відділ грошового обігу в Івано-Франківській обл.</region>
+			<region>Відділ грошового обігу в Миколаївській обл.</region>
 			<region>Відділ грошового обігу в Закарпатській обл.</region>
 		</user>
 	</category>

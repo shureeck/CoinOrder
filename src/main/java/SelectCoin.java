@@ -8,11 +8,10 @@ import org.w3c.dom.NodeList;
 import java.util.List;
 
 public class SelectCoin {
-    public static boolean selectCoin(boolean stateRegion, NodeList coins, WebDriver driver){
+    public static boolean selectCoin( NodeList coins, WebDriver driver){
         boolean state=false;
         int count=0;
         int i=0;
-        if (stateRegion){
             while (i< coins.getLength()){
                 String coinName = coins.item(i).getTextContent();
                 int j=0;
@@ -39,7 +38,6 @@ public class SelectCoin {
                 }//while
                 i++;
             }//while
-        }
         if (count>0){
             System.out.println("Успешно: Выбрано "+count+" монет из "+coins.getLength());
             Loger.setLog("Успешно: Выбрано "+count+" монет из "+coins.getLength());
