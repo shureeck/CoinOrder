@@ -49,51 +49,7 @@ public class Satrt {
                     //Make order
                     driver.findElement(By.id("zamovbtn")).click();
                     boolean orderState = Order.order(region, coinList, driver);
-
-                    //Resolve captcha
-                    String autocapcha = config.getElementsByTagName("autocapcha").item(0).getTextContent();
-                    if (autocapcha.equalsIgnoreCase("yes")) {
-                        System.out.println("Каптча будет решена автоматически");
-                        Loger.setLog("Каптча будет решена автоматически");
-                        String captchaAnswer = null;
-                        if (orderState) {
-                            captchaAnswer = Captcha.resolveCaptcha(driver);
-                        }
-                        if (captchaAnswer != null && autocapcha.length() <= 3) {
-                            driver.findElement(By.id("CaptchaInputText")).click();
-                            driver.findElement(By.id("CaptchaInputText")).sendKeys(captchaAnswer);
-
-                            try {
-                                Thread.sleep(1000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-
-                            driver.findElement(By.id("submitBtn")).click();
-
-                            try {
-                                driver.findElement(By.cssSelector("html body section div div.row address"));
-                                System.out.println("Успешно: Заказ выполнен");
-                                Loger.setLog("Успешно: Заказ выполнен");
-                            } catch (NotFoundException e) {
-                                System.out.println("Ошибка: Не удалось дождаться страници заказа. Стутс не известен");
-                                Loger.setLog("Ошибка: Не удалось дождаться страници заказа. Стутс не известен");
-                            }
-                        } else {
-                            System.out.println("Ошибка: Не удалось получить решение Captcha");
-                            Loger.setLog("Ошибка: Не удалось получить решение Captcha");
-                        }
-                    }//if
-                    else {
-                        try {
-                            driver.findElement(By.cssSelector("html body section div div.row address"));
-                            System.out.println("Успешно: Заказ выполнен");
-                            Loger.setLog("Успешно: Заказ выполнен");
-                        } catch (NotFoundException e) {
-                            System.out.println("Ошибка: Не удалось дождаться страници заказа. Стутс не известен");
-                            Loger.setLog("Ошибка: Не удалось дождаться страници заказа. Стутс не известен");
-                        }
-                    }
+                    ResolveCapcha.resolveCapcha(driver, orderState ,config);
                 }//if
                 driver.quit();
                 i++;
