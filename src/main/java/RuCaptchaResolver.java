@@ -36,21 +36,6 @@ public class RuCaptchaResolver {
                         continue;
                     } else if (response.startsWith("OK")) {
                         decryption = response.substring(3);
-                        if (decryption.length() > 3) {
-                            String first=decryption.substring(0,2);
-                            String second=decryption.substring(3,5);
-                            //char "-" = #45; char "+" = #43
-                            if (decryption.charAt(2)==43){
-                                decryption=Integer.toString(Integer.parseInt(first)+Integer.parseInt(second));
-                            }
-                            else if(decryption.charAt(2)==45){
-                                decryption=Integer.toString(Integer.parseInt(first)-Integer.parseInt(second));
-                            }
-                            else{
-                               System.out.println(" Ошибка: Сaptcha не решена.");
-                                Loger.setLog(" Ошибка: Сaptcha не решена.");
-                            }
-                        }
                         break;
                     }
                 }

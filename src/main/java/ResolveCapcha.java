@@ -14,9 +14,9 @@ public class ResolveCapcha {
             if (orderState) {
                 captchaAnswer = Captcha.resolveCaptcha(driver);
             }
-            if (captchaAnswer != null && autocapcha.length() <= 3) {
-                driver.findElement(By.id("CaptchaInputText")).click();
-                driver.findElement(By.id("CaptchaInputText")).sendKeys(captchaAnswer);
+            if (captchaAnswer != null) {
+                driver.findElement(By.id("CaptchaCode")).click();
+                driver.findElement(By.id("CaptchaCode")).sendKeys(captchaAnswer);
 
                 try {
                     Thread.sleep(1000);
