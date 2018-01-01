@@ -6,15 +6,15 @@
 		</mode>
 	</category>
 	<category name="coins">
-		<coin>85 РоКів донеЦькій області</coin>
-		<coin>ХХІІІ зимові Олімпійські</coin>
+		<coin>50 років Світовому конгресу українців</coin>
+		<coin>85 років Донецькій област</coin>
 	</category>
 	<category name="users">
-		<user>
-			<login>fdagr</login>
-			<password>Ra_16da0109</password>
-			<region>Відділ грошового обігу в Рівненській обл.</region>
-		</user>
+		<!--<user>-->
+			<!--<login>fdagr</login>-->
+			<!--<password>Ra_16da0109</password>-->
+			<!--<region>Відділ грошового обігу в Рівненській обл.</region>-->
+		<!--</user>-->
 		<user>
 			<login>sadan</login>
 			<password>Ra_16da0109</password>
