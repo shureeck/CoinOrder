@@ -2,31 +2,32 @@
 <root>
 	<category name="mode">
 		<mode>
+			<report>Yes</report>>
 			<autocapcha>Yes</autocapcha>
 		</mode>
 	</category>
 	<category name="coins">
 		<coin>50 років Світовому конгресу українців</coin>
-		<coin>85 років Донецькій област</coin>
+		<coin>ХХ зимові Олімпійські </coin>
+		<coin>ХХІІІ зимові Олімпійські </coin>
 	</category>
 	<category name="users">
-		<!--<user>-->
-			<!--<login>fdagr</login>-->
-			<!--<password>Ra_16da0109</password>-->
-			<!--<region>Відділ грошового обігу в Рівненській обл.</region>-->
-		<!--</user>-->
 		<user>
-			<login>sadan</login>
+			<login>fdagr</login>
 			<password>Ra_16da0109</password>
-			<region>Відділ грошового обігу в Дніпропетровській області</region>
-			<region>Відділ грошового обігу в Житомирській обл.</region>
-			<region>Відділ грошового обігу в Харківській області</region>
+			<region>Відділ грошового обігу в Рівненській обл.</region>
 		</user>
 		<user>
 			<login>sadan</login>
 			<password>Ra_16da0109</password>
 			<region>Відділ грошового обігу в Дніпропетровській області</region>
-			<region>Відділ грошового обігу в Житомирській обл.</region>
+			<region>Відділ грошового обігу в Івано-Франківській обл.</region>
+			<region>Відділ грошового обігу в Рівненській обл.</region>
+		</user>
+		<user>
+			<login>sadan</login>
+			<password>Ra_16da0109</password>
+			<region>Відділ грошового обігу в Рівненській обл.</region>
 			<region>Відділ грошового обігу в Закарпатській обл.</region>
 		</user>
 	</category>

@@ -10,7 +10,7 @@ public class Region {
 
         try {
            // driver.findElement(By.id("C_OBL")).click();
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
             Select select = new Select(driver.findElement(By.id("C_OBL")));
             select.selectByVisibleText(region);
             System.out.println("Успешно: Выбран регион" +region);

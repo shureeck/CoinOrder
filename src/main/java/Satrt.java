@@ -1,10 +1,12 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
@@ -23,7 +25,11 @@ public class Satrt {
         //Get coin list
         NodeList coinList = config.getElementsByTagName("coin");
 
-
+        try {
+            Files.deleteIfExists(new File("Order.csv").toPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         int i = 0;
         while (i<userList.getLength()) {
             //Set User Settings
@@ -46,15 +52,18 @@ public class Satrt {
                 stateLogin = Logining.login(login, password, driver);
 
                 if (stateLogin) {
-                    //Make report
-                    Reporter.getReport(driver,coinList,login+"\t"+password+"\t");
+                    if(config.getElementsByTagName("report").item(0).getTextContent().equalsIgnoreCase("yes")) {
+                        //Make report
+                        Reporter.getReport(driver, coinList, login + "\t" + password + "\t");
+                    }
+                    else {
 
-                    //Make order
-                    driver.findElement(By.id("zamovbtn")).click();
-                    boolean orderState = Order.order(region, coinList, driver);
-                    ResolveCapcha.resolveCapcha(driver, orderState ,config);
+                        //Make order
+                        driver.findElement(By.id("zamovbtn")).click();
+                        boolean orderState = Order.order(region, coinList, driver);
+                        ResolveCapcha.resolveCapcha(driver, orderState, config);
+                    }
                 }//if
-            
                 driver.quit();
                 i++;
             }//while
