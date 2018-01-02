@@ -18,9 +18,10 @@ public class CoinName {
             int i = 0;
             while (i < rows.size()) {
 
-                if ((rows.get(i).findElements(By.tagName("td")).get(1).getText()).toLowerCase().contains(coin.getTextContent())) {
+                if ((rows.get(i).findElements(By.tagName("td")).get(1).getText()).toLowerCase().contains(coin.getTextContent().toLowerCase())) {
                     temp.append( rows.get(i).findElements(By.tagName("td")).get(4).getText().trim()+"\t");
-                    temp.append((rows.get(i).findElements(By.tagName("td")).get(1).getText())+"\n");
+                    temp.append((rows.get(i).findElements(By.tagName("td")).get(1).getText()));
+                    break;
                 }
                 i++;
             }

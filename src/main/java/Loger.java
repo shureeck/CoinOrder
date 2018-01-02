@@ -1,7 +1,4 @@
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -32,6 +29,44 @@ public class Loger {
         try {
             writer =new BufferedWriter(new FileWriter(log, true));
             writer.write(formatTime.format(date)+": "+msg+'\n');
+        }//try
+        catch (IOException e){
+            e.printStackTrace();
+        }//catch
+        finally {
+            try {
+                writer.close();
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+        }//finally
+    }
+
+    public static void setReport (StringBuffer msg){
+
+        String logName = "Order.csv";
+        File log = new File(logName);
+        BufferedWriter writer=null;
+
+
+        //Create new file if not exist
+        try {
+            if (!log.exists()) {
+                log.createNewFile();
+                writer= new BufferedWriter(new OutputStreamWriter( new FileOutputStream (log),"UTF-8"));
+                writer.write("Логин"+"\t"+"Пароль"+"\t"+"ФИО"+"\t"+"Дата выхода в оборот"+"\t"+"Название монеты"+"\n");
+            }
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
+        //Write data in .log file
+
+        try {
+            writer =new BufferedWriter(new OutputStreamWriter( new FileOutputStream (log, true),"UTF-8"));
+            writer.write(msg+"\n");
         }//try
         catch (IOException e){
             e.printStackTrace();
