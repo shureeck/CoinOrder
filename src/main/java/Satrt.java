@@ -46,11 +46,15 @@ public class Satrt {
                 stateLogin = Logining.login(login, password, driver);
 
                 if (stateLogin) {
+                    //Make report
+                    Reporter.getReport(driver,coinList,login+"\t"+password+"\t");
+
                     //Make order
                     driver.findElement(By.id("zamovbtn")).click();
                     boolean orderState = Order.order(region, coinList, driver);
                     ResolveCapcha.resolveCapcha(driver, orderState ,config);
                 }//if
+            
                 driver.quit();
                 i++;
             }//while

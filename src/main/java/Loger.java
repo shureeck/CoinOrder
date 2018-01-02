@@ -54,8 +54,10 @@ public class Loger {
         try {
             if (!log.exists()) {
                 log.createNewFile();
+
                 writer= new BufferedWriter(new OutputStreamWriter( new FileOutputStream (log),"UTF-8"));
                 writer.write("Логин"+"\t"+"Пароль"+"\t"+"ФИО"+"\t"+"Дата выхода в оборот"+"\t"+"Название монеты"+"\n");
+                writer.close();
             }
         }
         catch (IOException e){
