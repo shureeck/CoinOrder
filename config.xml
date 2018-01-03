@@ -2,7 +2,7 @@
 <root>
 	<category name="mode">
 		<mode>
-			<report>Yes</report>>
+			<report>No</report>
 			<autocapcha>Yes</autocapcha>
 		</mode>
 	</category>
