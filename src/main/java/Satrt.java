@@ -54,10 +54,13 @@ public class Satrt {
                 if (stateLogin) {
                     if(config.getElementsByTagName("report").item(0).getTextContent().equalsIgnoreCase("yes")) {
                         //Make report
+                        System.out.println("Используется режим создания списка заказов");
+                        Loger.setLog("Используется режим создания списка заказов");
                         Reporter.getReport(driver, coinList, login + "\t" + password + "\t");
                     }
                     else {
-
+                        System.out.println("Используется режим автозаказа");
+                        Loger.setLog("Используется режим автозаказа");
                         //Make order
                         driver.findElement(By.id("zamovbtn")).click();
                         boolean orderState = Order.order(region, coinList, driver);

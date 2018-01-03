@@ -12,6 +12,9 @@ public class Names {
 
         FIO = lastName+" "+firstName+" "+middleName+"\t";
 
+        System.out.println("Успешно: Получино ФИО"+FIO);
+        Loger.setLog("Успешно: Получино ФИО"+FIO);
+
         return FIO;
     }
 }

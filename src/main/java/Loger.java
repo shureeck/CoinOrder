@@ -58,9 +58,13 @@ public class Loger {
                 writer= new BufferedWriter(new OutputStreamWriter( new FileOutputStream (log),"UTF-8"));
                 writer.write("Логин"+"\t"+"Пароль"+"\t"+"ФИО"+"\t"+"Дата выхода в оборот"+"\t"+"Название монеты"+"\n");
                 writer.close();
+                System.out.println("Успешно: Файл отчета "+logName+" создан");
+                Loger.setLog("Успешно: Файл отчета "+logName+" создан");
             }
         }
         catch (IOException e){
+            System.out.println("Ошибка: Не удалось создать файл "+logName);
+            Loger.setLog("Ошибка: Не удалось создать файл "+logName+"\n"+e.toString());
             e.printStackTrace();
         }
 
@@ -71,6 +75,8 @@ public class Loger {
             writer.write(msg+"\n");
         }//try
         catch (IOException e){
+            System.out.println("Ошибка: Не удалось записать данные по монете файл "+logName);
+            Loger.setLog("Ошибка: Не удалось записать данные по монете файл "+logName+"\n"+e.toString());
             e.printStackTrace();
         }//catch
         finally {
